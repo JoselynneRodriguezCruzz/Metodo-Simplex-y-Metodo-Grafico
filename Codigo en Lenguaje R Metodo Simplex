@@ -1,0 +1,22 @@
+library(lpSolve)
+
+funcion_objetivo <- c(23, 34)
+funcion_objetivo
+
+restriciones_derecho <- matrix(c(16,20,23,34), nrow = 2, byrow = T)
+
+
+restriciones_derecho
+
+
+restriccion.direccion <- c("<=", "<=")
+restriccion.direccion
+
+
+lado_derecho.restriccion <- c(234,345)
+lado_derecho.restriccion
+# Se ejecuta la instrucción para mostrar el resultado que maximize la función
+lp(direction = "max", objective.in = funcion_objetivo, const.mat =restriciones_derecho, const.dir = restriccion.direccion, const.rhs = lado_derecho.restriccion, int.vec = c(1, 2, 3, 4, 5), all.int = T)
+
+# Se ejecuta la instrucción para mostrar los valores de x1 y x2.
+lp(direction = "max", objective.in = funcion_objetivo, const.mat =restriciones_derecho, const.dir = restriccion.direccion, const.rhs = lado_derecho.restriccion, int.vec = c(1, 2, 3, 4, 5), all.int = T)$solution
